@@ -6,7 +6,7 @@
 /*   By: sduprey <sduprey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/12 19:32:39 by sduprey           #+#    #+#             */
-/*   Updated: 2014/07/13 15:56:10 by sduprey          ###   ########.fr       */
+/*   Updated: 2014/07/13 16:20:15 by sduprey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ int		grid_is_valid(char grid[9][9], int pos)
 	while (nb <= '9')
 	{
 		// A SUPPRIMER
-		printf("nb : %c\npos : %d\n", nb, pos);
-		//
-		if (!is_on_row(nb, grid, row) &&
-			!is_on_column(nb, grid, column) &&
-			!is_on_block(nb, grid, column, row))
+        printf("nb : %c | pos : %d\n", nb, pos);
+		printf("on_row : %d\n", is_on_row(nb, grid, row));
+        printf("on_col : %d\n", is_on_column(nb, grid, column));
+		printf("on_block : %d\n", is_on_row(nb, grid, column, row));
+        //
+		if (is_on_row(nb, grid, row) == 0 &&
+			is_on_column(nb, grid, column) == 0 &&
+			is_on_block(nb, grid, column, row) == 0)
 		{
 			grid[column][row] = nb;
 			if (grid_is_valid(grid, pos + 1))
