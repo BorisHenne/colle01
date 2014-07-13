@@ -6,14 +6,14 @@
 /*   By: sduprey <sduprey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/12 17:55:57 by sduprey           #+#    #+#             */
-/*   Updated: 2014/07/13 21:30:58 by sduprey          ###   ########.fr       */
+/*   Updated: 2014/07/13 21:40:10 by sduprey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		is_on_row(char nb, char grid[9][9], int row)
 {
 	int column;
-	
+
 	column = 0;
 	while (column < 9)
 	{
@@ -27,7 +27,7 @@ int		is_on_row(char nb, char grid[9][9], int row)
 int		is_on_column(char nb, char grid[9][9], int column)
 {
 	int row;
-	
+
 	row = 0;
 	while (row < 9)
 	{
@@ -44,9 +44,11 @@ int		is_on_block(char nb, char grid[9][9], int column, int row)
 	int row_start;
 	int row_end;
 	int column_end;
-	
+
 	column_start = column - (column % 3);
 	row_start = row - (row % 3);
+	row_end = row_start + 3;
+	column_end = column_start + 3;
 	while (column_start < column_end)
 	{
 		while (row_start < row_end)

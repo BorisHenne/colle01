@@ -6,7 +6,7 @@
 /*   By: sduprey <sduprey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/12 19:32:39 by sduprey           #+#    #+#             */
-/*   Updated: 2014/07/13 21:31:00 by sduprey          ###   ########.fr       */
+/*   Updated: 2014/07/13 21:41:43 by sduprey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		grid_is_valid(char grid[9][9], int pos)
 	int		column;
 	int		row;
 	char	nb;
-	
+
 	if (pos == 9 * 9)
 		return (1);
 	column = pos / 9;
