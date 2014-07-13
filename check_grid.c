@@ -6,7 +6,7 @@
 /*   By: sduprey <sduprey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/12 17:55:57 by sduprey           #+#    #+#             */
-/*   Updated: 2014/07/13 17:32:57 by sduprey          ###   ########.fr       */
+/*   Updated: 2014/07/13 19:53:26 by sduprey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,29 @@ int		is_on_column(char nb, char grid[9][9], int column)
 
 int		is_on_block(char nb, char grid[9][9], int column, int row)
 {
-	int column_end;
-	int row_end;
+	int column_start;
+	int row_start;
+	int row_base;
 
-	column_end = column - (column % 3);
-	row_end = row - (row % 3);
+	column_start = column - (column % 3);
+	row_start = row - (row % 3);
+	row_base = row;
 // DEBUG DEBUG
-	printf("block\ncol %d-%d\nrow %d-%d\n", column, column_end, row, row_end);
+	printf("block\ncol %d-%d\nrow %d-%d\n", column_start, column, row_start, row);
 // ********************
-	while (column_end < column)
+	while (column_start < row + 3)
 	{
-		while (row_end < row)
+		while (row_start < row + 3)
 		{
+			//row = row_base;
+			// DEBUG
+			printf("check block %d %d\n", row_start, column_start);
+			// *****************
 			if (grid[column][row] == nb)
 				return (1);
-			row_end++;
+			row_start++;
 		}
-		column_end++;
+		column_start++;
 	}
 	return (0);
 }
