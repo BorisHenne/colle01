@@ -6,7 +6,7 @@
 /*   By: bhenne <bhenne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/12 11:55:30 by bhenne            #+#    #+#             */
-/*   Updated: 2014/07/13 15:49:34 by sduprey          ###   ########.fr       */
+/*   Updated: 2014/07/13 16:57:01 by sduprey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ int main(int argc,char **argv)
 			}
 			column++;
 		}
+		// DEBUG
+		printf("original grid\n");
+		grid_render(grid);
+		// DEBUG
 		if (grid_is_valid(grid, 0) == 1)
 			grid_render(grid);
 		else
