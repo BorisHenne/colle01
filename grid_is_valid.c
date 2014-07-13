@@ -6,7 +6,7 @@
 /*   By: sduprey <sduprey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/12 19:32:39 by sduprey           #+#    #+#             */
-/*   Updated: 2014/07/13 17:12:16 by sduprey          ###   ########.fr       */
+/*   Updated: 2014/07/13 17:33:33 by sduprey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int		grid_is_valid(char grid[9][9], int pos)
 		return (1);
 	column = pos / 9;
 	row = pos % 9;
-//
+// DEBUG
 	printf("col : %d row : %d\n", column, row);
-//
+// *************************
 	if (grid[column][row] != '.')
 		return (grid_is_valid(grid, pos + 1));
 	nb = '1';
@@ -32,9 +32,9 @@ int		grid_is_valid(char grid[9][9], int pos)
 	{
 		// A SUPPRIMER
         printf("nb : %c | pos : %d\n", nb, pos);
-		printf("on_row : %d\n", is_on_row(nb, grid, row));
-        printf("on_col : %d\n", is_on_column(nb, grid, column));
-		printf("on_block : %d\n", is_on_row(nb, grid, column, row));
+		//printf("on_row : %d\n", is_on_row(nb, grid, row));
+        //printf("on_col : %d\n", is_on_column(nb, grid, column));
+		//printf("on_block : %d\n", is_on_block(nb, grid, column, row));
         //
 		if (is_on_row(nb, grid, row) == 0 &&
 			is_on_column(nb, grid, column) == 0 &&
